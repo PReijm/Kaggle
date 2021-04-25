@@ -1,0 +1,33 @@
+###drop certain features###
+
+#basis with all features
+drop_features_round0 = []
+
+#based on high related features in dendogram
+drop_features_round1 = ['IsMarried', 'Fare', 'FamilySize', 'IsAlone', 'Deck', 'Embarked', 'Age']
+
+#based on bottom 5 features with low importance
+drop_features_round2 = ['IsMarried', 'Fare', 'FamilySize', 'IsAlone', 'Deck', 'Embarked', 'Age', 
+                        'Person', 'Title_Miss', 'Person_male', 'Person_female', 'Sex']
+
+###keep certain features###
+
+#based on top 10 of permutation feature importance
+keep_features_round1 = ['DeckGroup_DE', 'FamilySizeBin_4', 'Title_Rare', 'CategoricalFare_2', 'CategoricalAge_(64.0, 80.0]',
+                        'Pclass_2', 'CategoricalFare_5', 'CategoricalAge_(48.0, 64.0]', 'Pclass_1', 'DeckGroup_FG']
+
+#based on top 10 of feature importance from the random forest
+keep_features_round2 = ['Person', 'Sex', 'Person_male', 'Person_female', 'Title_Mr',
+                        'Pclass', 'Title', 'Age', 'Fare', 'Pclass_3']
+
+#based on top n features from feature importance from the random forest
+keep_features_round3 = ['Person', 'Sex', 'Person_male', 'Person_female', 'Title_Mr', 'Pclass', 'Title', 'Age', 'Fare', 'Pclass_3',
+                        'FamilySize', 'Deck', 'TicketFrequency', 'Title_Mrs', 'FamilySizeBin', 'HasCabin', 'CategoricalFare']
+
+#removed the 4 worst features of keep_features_round3
+keep_features_round4 = ['Person', 'Sex', 'Person_male', 'Person_female', 'Title_Mr', 'Pclass', 'Age', 'Fare', 'Pclass_3',
+                        'FamilySize', 'Deck', 'TicketFrequency', 'FamilySizeBin']
+
+#update of keep_features_round3
+keep_features_round5 = ['Person', 'Sex', 'Person_male', 'Person_female', 'Title_Mr', 'Pclass', 'Title', 'Age', 'Fare', 'Pclass_3',
+                        'FamilySize', 'Deck', 'TicketFrequency', 'Title_Mrs', 'FamilySizeBin', 'HasCabin', 'CategoricalFare', 'Title_Miss', 'IsMarried', 'DeckGroup']
